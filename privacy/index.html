@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+  OurPlace privacy policy — static, no backend, no external assets.
+
+  Store-form mapping (Travis — see supabase/README.md / docs/ai/ANALYTICS.md
+  "Store paperwork"):
+    - Apple App Privacy: Contact Info (name) NOT collected — display name is
+      a chosen nickname, not real-identity contact info; Identifiers
+      (User ID via OAuth) linked to identity, not used for tracking; Usage
+      Data (Product Interaction) linked to identity, not used for tracking;
+      User Content (Photos, Other User Content — messages/drawings/answers)
+      linked to identity, not used for tracking; no data used for
+      third-party advertising or tracking (no ads SDK, no third-party
+      analytics/attribution SDK of any kind).
+    - Google Play Data Safety: App activity -> App interactions (collected,
+      not shared); Personal info -> Name/User IDs (collected, not shared);
+      Photos and videos (collected, not shared); Messages -> In-app messages
+      (collected, not shared); no data shared with third parties, no data
+      used for advertising.
+    - "Third party" below covers only infrastructure vendors (Supabase for
+      hosting, GitHub for the in-app bug/feedback tracker) — neither is an
+      advertiser and neither receives data for any purpose beyond running
+      the service or triaging a report the player chose to file.
+
+  Placeholders Travis must confirm before this goes live (see PASS-OFF.md /
+  the delivering session's report): the support email address, and that
+  "Supabase (hosted in the United States)" is the wording he wants for the
+  hosting disclosure.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OurPlace Privacy Policy</title>
+<style>
+  :root {
+    --bg: #0b0b0f; --card: #17171f; --text: #f5f5f7; --dim: #a6a6b0;
+    --accent: #7c6cf2; --border: #2a2a36;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 1.75rem; margin-bottom: 4px; }
+  .updated { color: var(--dim); font-size: 0.9rem; margin-bottom: 28px; }
+  h2 {
+    font-size: 1.15rem; margin-top: 32px; margin-bottom: 10px;
+    color: var(--accent); border-top: 1px solid var(--border); padding-top: 20px;
+  }
+  h1 + .updated + h2 { border-top: none; padding-top: 0; }
+  p, li { color: var(--text); font-size: 0.98rem; }
+  p { margin-bottom: 10px; }
+  ul { margin: 8px 0 12px 22px; }
+  li { margin-bottom: 6px; }
+  strong { color: #fff; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 18px; margin: 14px 0; font-size: 0.92rem; color: var(--dim);
+  }
+  footer { color: var(--dim); font-size: 0.85rem; margin-top: 36px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>OurPlace Privacy Policy</h1>
+  <p class="updated">Last updated: October 17, 2026</p>
+
+  <p>
+    OurPlace is made by <strong>Truce Games</strong>. It's a shared virtual
+    home for two people — partners, friends, or family — where you keep a
+    pet, decorate together, and stay in touch. This page explains what we
+    collect, why, and how to delete it.
+  </p>
+
+  <h2>Who can use OurPlace</h2>
+  <p>
+    You must be at least <strong>14 years old</strong> to create an account.
+    We ask for your birthday during setup only to check this — see below.
+  </p>
+
+  <h2>What we collect</h2>
+  <ul>
+    <li><strong>Display name</strong> — the nickname shown to your partner. Not your real name unless you choose to use it.</li>
+    <li><strong>Birthday</strong> (optional-in-purpose, required at setup) — used once, on your device, to confirm you're 14+. It is <strong>not</strong> sent to or stored on our servers.</li>
+    <li><strong>Anniversary date</strong> (optional) — if you set one, it's stored with your account so it can be shown in-app (e.g. a calendar highlight).</li>
+    <li><strong>Profile photo</strong> (optional) — stored only on your own device. It is never uploaded to our servers.</li>
+    <li><strong>Sign-in identity</strong> — when you sign in with Google, Discord, or Apple, we receive the account ID needed to recognize you on future sign-ins. We don't receive your password.</li>
+    <li><strong>Your link code</strong> — a random code used to connect your account with your partner's.</li>
+    <li><strong>Friend search</strong> — other OurPlace players can find you by typing the start of your display name or your exact link code. A search shows only your display name, your link code, your character's look and an internal household ID, so they can send you a friend request, which you accept or decline. Nothing else (your home, photos, notes or games) is visible to anyone outside your household, except the game results described in the next bullet.</li>
+    <li><strong>Game results shared with friends</strong> — after you finish a Daily Trail, your display name and solve time are shown on the leaderboard to everyone in a household that you or your partner have accepted as friends, and theirs to you. The same people can see how you did on the Daily Word (your display name, the number of guesses and a colour pattern with no letters). Nothing else is shared, and removing a friend removes you from their view.</li>
+    <li><strong>Shared household content</strong> — things you and your partner create together in the app: chat messages, photos you send each other, shared drawings, answers to in-app questions/games, the notes you attach to gifts, and the sticky notes you leave in your home.</li>
+    <li><strong>Daily Snap photos</strong> — the photo and optional caption you choose to send for the Daily Snap game. They are stored privately for your household (only you and your linked partner can see them) and kept until you remove the snap in the app or delete your account. A 30-day automatic clean-up is planned; until it ships, snaps stay until removed.</li>
+    <li><strong>Device push token</strong> (if you allow notifications) — lets us send you a push notification (e.g. "your partner is in your place").</li>
+    <li><strong>Product-interaction analytics</strong> — which screens you use and for how long, and gameplay events (e.g. a minigame finished), tied to your account so we can understand how the game is used. This is <strong>not</strong> used for advertising or cross-app tracking, and we don't use any third-party analytics or ad SDK to collect it — it goes straight to our own server.</li>
+    <li><strong>Bug/feedback reports</strong> — if you use the in-app "Report a bug" form, we collect what you typed, your device/app info, and an optional screenshot.</li>
+  </ul>
+  <div class="card">
+    We do not show ads, and we do not use any third-party advertising or
+    tracking SDK. Nothing above is sold or shared with advertisers.
+  </div>
+
+  <h2>Who we share it with</h2>
+  <ul>
+    <li><strong>Supabase</strong> — our hosting provider. All account and household data lives on Supabase's servers; they process it on our behalf and don't use it for their own purposes.</li>
+    <li><strong>GitHub</strong> — if you file an in-app bug or feedback report, its text and screenshot are posted to a private issue tracker on GitHub so our team can fix the problem. Reports are identified only by your random link code, not your name or account. <strong>Bug reports and their screenshots are kept for up to 12 months</strong> for support purposes and are <strong>not deleted when you delete your account</strong> (like a support ticket at any company). You can ask us to remove one by emailing us — see below.</li>
+  </ul>
+
+  <h2>Deleting your account</h2>
+  <p>
+    In the app: <strong>Settings → Account → Delete my account.</strong> This
+    permanently deletes your sign-in and personal data: your profile, your
+    own chat messages, photos, Daily Snaps, drawings, answers, gift notes (a gift you
+    sent stays in your partner's home without your note or name), and the
+    sticky notes you left in your home.
+  </p>
+  <p>
+    If you're linked with a partner, your shared home and pet <strong>stay
+    with them</strong> — deleting your account doesn't take away what you
+    built together. Joint plans you both kept (like a shared bucket list or
+    calendar) stay too, just without your name attached. Photos or drawings
+    that only exist as part of your shared household stay with your partner
+    for the same reason. Your bug/feedback reports on GitHub are kept per
+    the retention note above. We also keep a minimal record that the
+    deletion happened (your account id, link code and the date, plus a list
+    of the files we removed) so we can prove it was carried out and finish
+    any cleanup that failed part-way; nothing in that record identifies you
+    by name.
+  </p>
+  <p>
+    To request deletion of data we haven't covered above, or if you can't
+    access the app, email us at
+    <strong><a href="mailto:email.truce.games@gmail.com">email.truce.games@gmail.com</a></strong>.
+  </p>
+
+  <h2>Questions</h2>
+  <p>
+    Email <a href="mailto:email.truce.games@gmail.com">email.truce.games@gmail.com</a>
+    and we'll get back to you.
+  </p>
+
+  <footer>Truce Games · OurPlace</footer>
+</div>
+</body>
+</html>

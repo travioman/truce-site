@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+  OurPlace /join page (Quick Join — docs/ai/QUICK-JOIN.md).
+
+  Static, no backend. Host it next to the privacy page (TODO.md) and set the
+  two store URLs below. The invite token rides in the URL FRAGMENT
+  (…/join#ABCDEFGH) so it never appears in server logs.
+
+  Flow: "Open the app" copies the invite code to the clipboard first, then
+  fires the ourplace:// scheme — if the app is installed it opens and the
+  link screen offers the invite from the clipboard; if not, the visitor uses
+  the store buttons and the code survives on their clipboard for first run.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join me on OurPlace</title>
+<style>
+  :root {
+    --bg: #0b0b0f; --card: #17171f; --text: #f5f5f7; --dim: #a6a6b0;
+    --accent: #7c6cf2; --accent-text: #ffffff; --border: #2a2a36;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+    max-width: 420px; width: 100%; padding: 32px 24px; text-align: center;
+  }
+  h1 { font-size: 1.5rem; margin-bottom: 8px; }
+  p.sub { color: var(--dim); font-size: 0.95rem; margin-bottom: 24px; }
+  .code {
+    font-size: 2rem; letter-spacing: 0.15em; font-weight: 700;
+    background: var(--bg); border: 1px solid var(--accent); border-radius: 12px;
+    padding: 14px 8px; margin-bottom: 10px; user-select: all;
+  }
+  .hint { color: var(--dim); font-size: 0.8rem; margin-bottom: 24px; min-height: 1.2em; }
+  a.btn, button.btn {
+    display: block; width: 100%; padding: 15px; margin-bottom: 12px;
+    border-radius: 12px; border: 1px solid var(--border);
+    background: var(--card); color: var(--text);
+    font-size: 1rem; font-weight: 600; text-decoration: none; cursor: pointer;
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+  .missing { display: none !important; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Join me on OurPlace 🏡</h1>
+  <p class="sub">Someone wants to share a cozy little home with you.</p>
+
+  <div class="code" id="code">— — — —</div>
+  <div class="hint" id="hint">Your invite code — tap “Open the app” and it comes with you.</div>
+
+  <button class="btn primary" id="open">Open the app</button>
+  <!-- Set these to the TestFlight public link / Play closed-testing link.
+       Buttons stay hidden while the href is "#". -->
+  <a class="btn" id="ios" href="#">Get it for iPhone (TestFlight)</a>
+  <a class="btn" id="android" href="#">Get it for Android (Google&nbsp;Play)</a>
+  <button class="btn" id="copy">Copy invite code</button>
+</div>
+
+<script>
+  var token = (location.hash || "").replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+  var pretty = token.length === 8 ? token.slice(0, 4) + "-" + token.slice(4) : "";
+  var codeEl = document.getElementById("code");
+  var hintEl = document.getElementById("hint");
+  if (pretty) { codeEl.textContent = pretty; }
+  else {
+    codeEl.textContent = "?";
+    hintEl.textContent = "This invite link is incomplete — ask your person to resend it.";
+  }
+
+  ["ios", "android"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el.getAttribute("href") === "#") el.classList.add("missing");
+  });
+
+  function copyCode(then) {
+    if (!pretty) { if (then) then(); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(pretty).then(
+        function () { hintEl.textContent = "Copied! Paste it in the app if it doesn't auto-fill."; if (then) then(); },
+        function () { if (then) then(); });
+    } else { if (then) then(); }
+  }
+
+  document.getElementById("copy").addEventListener("click", function () { copyCode(null); });
+  document.getElementById("open").addEventListener("click", function () {
+    copyCode(function () { location.href = "ourplace://join/" + token; });
+  });
+</script>
+</body>
+</html>
