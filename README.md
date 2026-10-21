@@ -1,7 +1,7 @@
 # truce-site
 
 Static site for Truce Games and OurPlace. Plain HTML, no build step.
-Hosted on GitHub Pages; `CNAME` holds the domain.
+Hosted on Cloudflare Pages (connected to this repo; every push deploys; no build command) at `truce.games`. `CNAME` is only for the old GitHub Pages setup.
 
 ## Pages
 
@@ -14,5 +14,5 @@ Hosted on GitHub Pages; `CNAME` holds the domain.
 ## Notes
 
 - Support email is the interim `email.truce.games@gmail.com` until truce.games has mail.
-- `privacy/` and `join/` started as copies of `web/` in the OurPlace repo. This repo is now their home; edit them here.
-- Moving to the bare `truce.games` later = change `CNAME` and the GoDaddy records. Links are root-relative, so nothing else changes.
+- `privacy/` and `join/` started as copies of `web/` in the OurPlace repo; OurPlace sessions still edit `web/privacy.html` there, so copy it here after any privacy change (synced 2026-10-21).
+- Domain: `truce.games` points at Cloudflare (its nameservers); `www` redirects to the bare domain. Links are root-relative.
