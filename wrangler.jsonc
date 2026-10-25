@@ -1,0 +1,15 @@
+// Static site on Cloudflare Workers (assets only, no script).
+// Only public/ is published, so repo files (.git, README, this file) never are.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "truce-site",
+  "compatibility_date": "2026-10-19",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

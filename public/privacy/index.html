@@ -1,71 +1,28 @@
 <!DOCTYPE html>
-<!--
-  OurPlace privacy policy — static, no backend, no external assets.
-
-  Store-form mapping (Travis — see supabase/README.md / docs/ai/ANALYTICS.md
-  "Store paperwork"):
-    - Apple App Privacy: Contact Info (name) NOT collected — display name is
-      a chosen nickname, not real-identity contact info; Identifiers
-      (User ID via OAuth) linked to identity, not used for tracking; Usage
-      Data (Product Interaction) linked to identity, not used for tracking;
-      User Content (Photos, Other User Content — messages/drawings/answers)
-      linked to identity, not used for tracking; no data used for
-      third-party advertising or tracking (no ads SDK, no third-party
-      analytics/attribution SDK of any kind).
-    - Google Play Data Safety: App activity -> App interactions (collected,
-      not shared); Personal info -> Name/User IDs (collected, not shared);
-      Photos and videos (collected, not shared); Messages -> In-app messages
-      (collected, not shared); no data shared with third parties, no data
-      used for advertising.
-    - "Third party" below covers only infrastructure vendors (Supabase for
-      hosting, GitHub for the in-app bug/feedback tracker) — neither is an
-      advertiser and neither receives data for any purpose beyond running
-      the service or triaging a report the player chose to file.
-
-  Placeholders Travis must confirm before this goes live (see PASS-OFF.md /
-  the delivering session's report): the support email address, and that
-  "Supabase (hosted in the United States)" is the wording he wants for the
-  hosting disclosure.
--->
+<!-- Body copy is synced from web/privacy.html in the OurPlace repo; keep only the text between the article tags in sync. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OurPlace Privacy Policy</title>
-<style>
-  :root {
-    --bg: #0b0b0f; --card: #17171f; --text: #f5f5f7; --dim: #a6a6b0;
-    --accent: #7c6cf2; --border: #2a2a36;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg); color: var(--text);
-    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.55;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-  h1 { font-size: 1.75rem; margin-bottom: 4px; }
-  .updated { color: var(--dim); font-size: 0.9rem; margin-bottom: 28px; }
-  h2 {
-    font-size: 1.15rem; margin-top: 32px; margin-bottom: 10px;
-    color: var(--accent); border-top: 1px solid var(--border); padding-top: 20px;
-  }
-  h1 + .updated + h2 { border-top: none; padding-top: 0; }
-  p, li { color: var(--text); font-size: 0.98rem; }
-  p { margin-bottom: 10px; }
-  ul { margin: 8px 0 12px 22px; }
-  li { margin-bottom: 6px; }
-  strong { color: #fff; }
-  a { color: var(--accent); }
-  .card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 16px 18px; margin: 14px 0; font-size: 0.92rem; color: var(--dim);
-  }
-  footer { color: var(--dim); font-size: 0.85rem; margin-top: 36px; }
-</style>
+<title>OurPlace Privacy Policy - Truce Games</title>
+<meta name="theme-color" content="#fff8f1">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<div class="wrap">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/truce-mark.png" alt="" width="52" height="30"><span>Truce Games</span></a>
+    <nav class="site-nav">
+      <a href="/ourplace/">OurPlace</a>
+      <a href="/support/">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap prose" style="padding-top:24px">
+    <article class="card doc">
   <h1>OurPlace Privacy Policy</h1>
   <p class="updated">Last updated: October 20, 2026</p>
 
@@ -99,7 +56,7 @@
     <li><strong>Product-interaction analytics</strong> — which screens you use and for how long, and gameplay events (e.g. a minigame finished), tied to your account so we can understand how the game is used. This is <strong>not</strong> used for advertising or cross-app tracking, and we don't use any third-party analytics or ad SDK to collect it — it goes straight to our own server.</li>
     <li><strong>Bug/feedback reports</strong> — if you use the in-app "Report a bug" form, we collect what you typed, your device/app info, and an optional screenshot.</li>
   </ul>
-  <div class="card">
+  <div class="note">
     We do not show ads, and we do not use any third-party advertising or
     tracking SDK. Nothing above is sold or shared with advertisers.
   </div>
@@ -142,8 +99,19 @@
     Email <a href="mailto:email.truce.games@gmail.com">email.truce.games@gmail.com</a>
     and we'll get back to you.
   </p>
+    </article>
+  </div>
+</main>
 
-  <footer>Truce Games · OurPlace</footer>
-</div>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; 2026 Truce Games</span>
+    <nav>
+      <a href="/">Truce Games</a>
+      <a href="/ourplace/">OurPlace</a>
+      <a href="/support/">Support</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>
