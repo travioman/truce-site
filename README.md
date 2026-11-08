@@ -23,7 +23,7 @@ Static site for Truce Games and OurPlace. Plain HTML, no build step.
 
 ## Notes
 
-- One stylesheet: `public/style.css`. Look built from the logo (2026-11-07 redesign): Truce teal `#80DED9`, deep teal ink, white and a teal mist; OurPlace pages use its peach. Geist (OFL, `public/assets/fonts/`).
+- One stylesheet: `public/style.css`. Truce brand (2026-11-08): deep teal ink + Truce teal `#80DED9`, Bebas Neue display type (echoes the wordmark; OFL, `assets/fonts/`), Geist body. Story: developers + players, same side; "Terms of the truce" (4 articles); OurPlace = Game 01 in its peach.
 - Logo: `assets/truce-mark.svg` (teal + white), `truce-mark-mono.svg` and `truce-wordmark.svg` (single colour; used through CSS masks so they take the text colour: `.logo-mono`, `.wordmark`). Traced from `E:/AI/truce-games/brand` PNGs.
 - OurPlace art on the site is the app icon on a peach card (2026-11-07: Travis passed on the room renders, and the site never claims anything is handmade or AI-free).
 - Team avatars are initials until the portraits exist; swap in `assets/team/<name>.webp` (comment in the markup).
