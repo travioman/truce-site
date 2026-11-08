@@ -28,6 +28,24 @@
     });
   }
 
+  // Team player cards: 3D tilt toward the pointer and a foil glare that follows it.
+  if (!reduce && window.matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll(".member").forEach(function (card) {
+      card.addEventListener("pointermove", function (ev) {
+        var r = card.getBoundingClientRect();
+        var x = (ev.clientX - r.left) / r.width, y = (ev.clientY - r.top) / r.height;
+        card.style.transition = "transform .08s ease-out, box-shadow .3s ease";
+        card.style.transform = "perspective(900px) rotateX(" + ((0.5 - y) * 14).toFixed(2) + "deg) rotateY(" +
+          ((x - 0.5) * 16).toFixed(2) + "deg) translateY(-6px)";
+        card.style.setProperty("--px", (110 - x * 120).toFixed(1) + "%");
+      });
+      card.addEventListener("pointerleave", function () {
+        card.style.transition = "transform .5s cubic-bezier(.2, .8, .2, 1), box-shadow .3s ease";
+        card.style.transform = "";
+      });
+    });
+  }
+
   var nav = document.querySelector(".nav");
   if (nav) {
     var onScroll = function () { nav.classList.toggle("scrolled", window.scrollY > 8); };
