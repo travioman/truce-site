@@ -415,13 +415,6 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
   position: relative; overflow: hidden; isolation: isolate;
   padding: 0 1.4rem 2.2rem; will-change: transform;
 }
-.member::before {
-  content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: 0; height: 112px;
-  background:
-    radial-gradient(circle at 18% 0%, rgba(128, 222, 217, .45), transparent 60%),
-    repeating-linear-gradient(135deg, rgba(255, 255, 255, .05) 0 10px, transparent 10px 20px),
-    var(--ink);
-}
 .member::after {
   content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
   background: linear-gradient(115deg, transparent 32%, rgba(128, 222, 217, .35) 44%, rgba(255, 181, 154, .35) 50%, rgba(255, 255, 255, .55) 54%, transparent 66%);
@@ -431,9 +424,9 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 .member:hover::after { opacity: 1; }
 .member-no {
   position: absolute; top: .75rem; left: 1rem;
-  font-family: var(--display); font-size: 1.5rem; letter-spacing: .12em; color: var(--teal);
+  font-family: var(--display); font-size: 1.5rem; letter-spacing: .12em; color: var(--teal-text);
 }
-.avatar-ring { position: relative; margin: 38px 0 1rem; padding: 6px; border-radius: 50%; }
+.avatar-ring { position: relative; margin: 2.2rem 0 1rem; padding: 6px; border-radius: 50%; }
 .avatar-ring::before {
   content: ""; position: absolute; inset: 0; border-radius: 50%;
   background: conic-gradient(var(--teal), var(--peach), #fff, var(--teal));
