@@ -15,7 +15,7 @@ Static site for Truce Games and OurPlace. Plain HTML, no build step.
 
 - `/` studio home
 - `/games/` all games (add a `.game` card per title)
-- `/about/` the studio (nav says Studio): why Truce, the team (Travis, Victoria, Cam), how we work
+- `/about/` the studio (nav says Studio): why Truce, what we stand for (team section removed 2026-11-08; portrait kept in `assets/team/`)
 - `/ourplace/` game page (store buttons appear once their `href` is set)
 - `/privacy/` privacy policy (store and Google verification URL)
 - `/terms/` terms of service (master: OurPlace `web/terms.html`)
