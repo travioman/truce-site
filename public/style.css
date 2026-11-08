@@ -90,14 +90,14 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 /* Header */
 .nav {
   position: sticky; top: 0; z-index: 20;
-  background: rgba(13, 40, 38, .94); backdrop-filter: saturate(1.3) blur(12px);
+  background: var(--ink);
   border-bottom: 1px solid var(--line-ink); color: #fff;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  min-height: 72px; padding: 0 var(--gutter);
+  min-height: 84px; padding: 0 var(--gutter);
 }
 .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: #fff; }
-.brand img { width: 52px; }
-.brand .wordmark { width: 124px; }
+.brand img { width: 68px; }
+.brand .wordmark { width: 168px; }
 .nav nav { display: flex; align-items: center; gap: clamp(.2rem, 2vw, 1.2rem); }
 .nav nav a {
   color: rgba(255, 255, 255, .82); text-decoration: none;
@@ -131,7 +131,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
   padding: clamp(4rem, 9vw, 7.5rem) var(--gutter) clamp(4.5rem, 9vw, 8rem);
 }
 .hero .inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
-.hero-mark { width: clamp(150px, 20vw, 230px); margin-bottom: 1.6rem; filter: drop-shadow(0 20px 40px rgba(0, 0, 0, .35)); }
+.hero-mark { width: clamp(150px, 20vw, 230px); margin-bottom: 1.6rem; }
 .hero h1 { margin: 1rem 0 0; max-width: 12ch; }
 .hero .lede { color: var(--on-ink); }
 .hero .actions { justify-content: center; }
@@ -165,6 +165,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 .side h3 { font-family: var(--display); font-weight: 400; font-size: clamp(2.4rem, 4vw, 3.2rem); letter-spacing: .02em; line-height: 1; margin-bottom: .8rem; text-transform: uppercase; }
 .side p { color: var(--muted); font-size: 1.05rem; }
 .side.devs h3 { color: var(--teal-text); }
+@media (min-width: 900px) { .side.players { text-align: right; } }
 .meet {
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
   background: var(--ink); color: #fff; border-radius: var(--radius); padding: 1.8rem 2.2rem; min-width: 220px;
@@ -185,7 +186,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
   display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%;
   border: 2px solid var(--teal); color: var(--teal); transform: rotate(-12deg);
 }
-.signed .stamp .logo-mono { width: 46px; }
+.signed .stamp img { width: 50px; }
 .signed em { font-family: var(--display); font-style: normal; font-size: 1.8rem; letter-spacing: .05em; color: #fff; }
 
 /* Game 01 */
@@ -243,7 +244,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 
 /* Closing band */
 .close { background: var(--teal); color: var(--ink); text-align: center; padding: clamp(4.5rem, 9vw, 7rem) var(--gutter); }
-.close .logo-mono { width: 130px; color: var(--ink); margin-bottom: 1.2rem; }
+.close-mark { width: 150px; margin: 0 auto 1.2rem; }
 .close h2 { max-width: 16ch; margin: 0 auto; }
 .close p { margin: 1.1rem auto 2rem; max-width: 36rem; font-size: 1.1rem; }
 .close .actions { justify-content: center; }
@@ -291,7 +292,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .nav { min-height: 64px; }
-  .brand img { width: 44px; }
+  .brand img { width: 56px; }
   .brand .wordmark { display: none; }
   .nav nav a { font-size: 1.15rem; padding: .35rem .45rem; }
   .actions .btn { width: 100%; }
@@ -311,15 +312,14 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 .js .reveal.pop { transform: scale(.6) rotate(-8deg); }
 .js .reveal.in, .js .reveal.in.from-left, .js .reveal.in.from-right, .js .reveal.in.pop { opacity: 1; transform: none; }
 
-/* Hero: pointer glow, drifting stars, floating mark with a turning ring */
+/* Hero: static stars, floating mark with a turning ring (kept cheap for PCs without graphics acceleration) */
 .hero {
   background:
-    radial-gradient(520px circle at var(--mx, 50%) var(--my, 36%), rgba(128, 222, 217, .2), transparent 62%),
-    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(128, 222, 217, .1), transparent 70%),
+    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(128, 222, 217, .14), transparent 70%),
     var(--ink);
 }
-.stars, .stars::after {
-  position: absolute; inset: -20% 0 0; pointer-events: none;
+.stars {
+  position: absolute; inset: 0; pointer-events: none;
   background-image:
     radial-gradient(1.6px 1.6px at 12% 22%, rgba(255, 255, 255, .8), transparent),
     radial-gradient(1.4px 1.4px at 28% 68%, rgba(128, 222, 217, .9), transparent),
@@ -330,21 +330,16 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
     radial-gradient(1.2px 1.2px at 6% 86%, rgba(128, 222, 217, .7), transparent),
     radial-gradient(1.6px 1.6px at 54% 48%, rgba(255, 255, 255, .5), transparent);
   background-size: 640px 520px;
-  animation: drift 60s linear infinite;
 }
-.stars::after { content: ""; inset: 0; background-size: 410px 360px; background-position: 120px 80px; animation: twinkle 4.5s ease-in-out infinite alternate; }
-@keyframes drift { to { transform: translateY(20%); } }
 @keyframes twinkle { from { opacity: .15; } to { opacity: 1; } }
 
 .mark-wrap { position: relative; display: grid; place-items: center; margin-bottom: 1.6rem; }
 .mark-wrap::before {
   content: ""; position: absolute; width: 150%; aspect-ratio: 1; border-radius: 50%;
-  background: conic-gradient(from 0deg, transparent 0 55%, rgba(128, 222, 217, .55) 75%, transparent 90%);
-  -webkit-mask: radial-gradient(closest-side, transparent 92%, #000 93%, #000 100%, transparent 100%);
-  mask: radial-gradient(closest-side, transparent 92%, #000 93%, #000 100%, transparent 100%);
-  animation: spin 14s linear infinite;
+  border: 2px solid rgba(128, 222, 217, .1); border-top-color: rgba(128, 222, 217, .7);
+  will-change: transform; animation: spin 14s linear infinite;
 }
-.mark-wrap .hero-mark { margin-bottom: 0; animation: float 6s ease-in-out infinite; }
+.mark-wrap .hero-mark { margin-bottom: 0; will-change: transform; animation: float 6s ease-in-out infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 
@@ -356,7 +351,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
   animation: pulse 3.6s ease-in-out infinite;
 }
 .meet > * { position: relative; z-index: 1; }
-@keyframes pulse { 0%, 100% { opacity: .35; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.05); } }
+@keyframes pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
 .side { transition: transform .3s ease, box-shadow .3s ease; }
 .side:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 
@@ -401,7 +396,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 .nav.scrolled { box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .55); }
 
 /* Closing band: the mark gently rocks */
-.close .logo-mono { animation: rock 5s ease-in-out infinite; transform-origin: 50% 70%; }
+.close-mark { will-change: transform; animation: rock 5s ease-in-out infinite; transform-origin: 50% 70%; }
 @keyframes rock { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
 
 @media (prefers-reduced-motion: reduce) {
@@ -438,3 +433,12 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 .member:hover .avatar img { transform: scale(1.1); }
 .member:hover .avatar-ring::before { animation-duration: 2.2s; }
 .member:hover { transform: none; box-shadow: 0 30px 60px -28px rgba(13, 40, 38, .55); }
+
+/* Hero pointer glow: one blurred-free radial blob moved by transform (cheap) */
+.hero-glow {
+  position: absolute; z-index: 0; left: 0; top: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+  border-radius: 50%; pointer-events: none; opacity: 0; transition: opacity .4s ease;
+  background: radial-gradient(circle, rgba(128, 222, 217, .18), transparent 62%);
+  will-change: transform;
+}
+.hero:hover .hero-glow { opacity: 1; }
