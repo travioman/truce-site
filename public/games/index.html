@@ -13,6 +13,8 @@
 <link rel="icon" href="/assets/truce-mark.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="stylesheet" href="/style.css">
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__truceMotion)document.documentElement.classList.remove("js")},2500)</script>
+<script src="/assets/site.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -27,17 +29,18 @@
 
 <main id="main">
   <section class="hero left">
+    <div class="stars" aria-hidden="true"></div>
     <span class="logo-mono watermark" aria-hidden="true"></span>
     <div class="inner">
-      <span class="eyebrow">Games</span>
-      <h1>Our <span class="hl">games.</span></h1>
-      <p class="lede">Quality games made with players. Here's what we're building.</p>
+      <span class="eyebrow reveal" style="--d:.1s">Games</span>
+      <h1 class="reveal" style="--d:.2s">Our <span class="hl">games.</span></h1>
+      <p class="lede reveal" style="--d:.3s">Quality games made with players. Here's what we're building.</p>
     </div>
   </section>
 
   <section class="band peach">
     <div class="inner game">
-      <div>
+      <div class="reveal from-left">
         <span class="eyebrow">Game 01 · iPhone and Android</span>
         <h2>OurPlace</h2>
         <p class="tagline">Truce brings developers and players together. OurPlace brings people together.</p>
@@ -45,13 +48,13 @@
         <ul class="facts"><li>Coming soon</li><li>Free to play</li><li>Made for two</li></ul>
         <a class="btn primary" href="/ourplace/">Meet OurPlace <span aria-hidden="true">&rarr;</span></a>
       </div>
-      <div class="phone" aria-hidden="true"><div class="screen"><img src="/assets/ourplace-logo.png" alt="" width="150" height="150"><b>OurPlace</b><span>Coming soon</span></div></div>
+      <div class="phone-wrap reveal from-right" aria-hidden="true"><span class="sparkle s1">✦</span><span class="sparkle s2">✦</span><span class="sparkle s3">✦</span><div class="phone"><div class="screen"><img src="/assets/ourplace-logo.png" alt="" width="150" height="150"><b>OurPlace</b><span>Coming soon</span></div></div></div>
     </div>
   </section>
 
   <section class="band mist">
     <div class="inner">
-      <div class="section-head center">
+      <div class="reveal section-head center">
         <span class="eyebrow">Game 02</span>
         <h2>In the <span class="hl">workshop.</span></h2>
         <p>Something new is on the way. Players will see it early, as always.</p>

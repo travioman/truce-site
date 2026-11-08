@@ -24,6 +24,7 @@ Static site for Truce Games and OurPlace. Plain HTML, no build step.
 ## Notes
 
 - One stylesheet: `public/style.css`. Truce brand (2026-11-08): deep teal ink + Truce teal `#80DED9`, Bebas Neue display type (echoes the wordmark; OFL, `assets/fonts/`), Geist body. Story: developers + players, same side; "Terms of the truce" (4 articles); OurPlace = Game 01 in its peach.
+- Motion (2026-11-08): `assets/site.js` reveals `.reveal` sections on scroll, moves the hero glow with the pointer and shades the header. A head snippet adds `.js` and removes it after 2.5 s if site.js never ran, so content can never stay hidden. Everything stops under prefers-reduced-motion.
 - Logo: `assets/truce-mark.svg` (teal + white), `truce-mark-mono.svg` and `truce-wordmark.svg` (single colour; used through CSS masks so they take the text colour: `.logo-mono`, `.wordmark`). Traced from `E:/AI/truce-games/brand` PNGs.
 - OurPlace art on the site is the app icon on a peach card (2026-11-07: Travis passed on the room renders, and the site never claims anything is handmade or AI-free).
 - Team avatars are initials until the portraits exist; swap in `assets/team/<name>.webp` (comment in the markup).
