@@ -18,6 +18,8 @@ Static site for Truce Games and OurPlace. Plain HTML, no build step.
 - `/about/` the studio (nav says Studio): why Truce, the team (Travis, Victoria, Cam), how we work
 - `/ourplace/` game page (store buttons appear once their `href` is set)
 - `/privacy/` privacy policy (store and Google verification URL)
+- `/terms/` terms of service (master: OurPlace `web/terms.html`)
+- `/delete-account/` account & data deletion (Google Play deletion URL; lives only here)
 - `/join/` Quick Join invite landing page (`/join/#CODE`)
 - `/support/` support and bug contact
 

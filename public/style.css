@@ -257,7 +257,7 @@ h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1
 .doc .updated { color: var(--muted); font-size: .85rem; font-weight: 600; margin-bottom: 1.8rem; }
 .doc p, .doc li { font-size: 1rem; }
 .doc p { margin-bottom: .8rem; }
-.doc ul { margin: .5rem 0 1rem 1.3rem; }
+.doc ul, .doc ol { margin: .5rem 0 1rem 1.3rem; }
 .doc li { margin-bottom: .55rem; }
 .doc table { width: 100%; border-collapse: collapse; margin: .6rem 0 1.2rem; font-size: .95rem; }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: .6rem .7rem; border-bottom: 1px solid var(--line); }
